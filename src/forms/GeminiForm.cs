@@ -1415,8 +1415,9 @@ namespace Gemini
     private void scriptName_TextChanged(object sender, EventArgs e)
     {
       if (_updatingText) return;
+      int start = scriptName.SelectionStart;
       scriptName.Text = _invalidRegex.Replace(scriptName.Text, "");
-      scriptName.Select(scriptName.Text.Length - 1, 0);
+      if (scriptName.Text.Length > 0) scriptName.Select(start, 0);
       int section = int.Parse(scriptsView.SelectedNode.Name);
       if (GetScript(section).Name != scriptName.Text)
       {
