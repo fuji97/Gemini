@@ -1195,7 +1195,7 @@ namespace Gemini
     private void scriptsView_AfterSelect(object sender, TreeViewEventArgs e)
     {
       _updatingText = true;
-      scriptName.Text = e.Node.Text;
+      scriptName.Text = GetScript(int.Parse(e.Node.Name)).Name;
       _updatingText = false;
       UpdateMenusEnabled();
     }
@@ -2532,7 +2532,7 @@ namespace Gemini
       Script script = GetScript(section);
       TreeNode node = new TreeNode();
       node.Name = section.ToString();
-      node.Text = script.Name;
+      node.Text = script.TabName;
       node.ToolTipText = script.Name + " - " + section.ToString();
 
       return node;

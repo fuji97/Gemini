@@ -88,7 +88,8 @@ namespace Gemini
 
     private void UpdateTabName()
     {
-      _tabName = NeedSave ? "* " + Name : Name;
+      string name = string.IsNullOrEmpty(Name) ? "(no name)" : Name;
+      _tabName = NeedSave ? "* " + name : name;
       if (Opened)
         _tabPage.Text = _tabName;
     }
