@@ -45,7 +45,8 @@ deploy:
   tag: v$(appveyor_build_version)
   release: Gemini v$(appveyor_build_version)
   description: Autocompiled build from Appveyor.
-  auth_token: 67cc280038d3d490c2bcf6520ecc822c18fdb54a
+  auth_token:
+      secure: $(access_token)
   artifact: Gemini.zip
   draft: false
   prerelease: true
