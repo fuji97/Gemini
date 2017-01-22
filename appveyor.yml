@@ -46,7 +46,7 @@ deploy:
   release: Gemini v$(appveyor_build_version)
   description: Autocompiled build from Appveyor.
   auth_token:
-      secure: $(access_token)
+      secure: 67cc280038d3d490c2bcf6520ecc822c18fdb54a
   artifact: Gemini.zip
   draft: false
   prerelease: true
